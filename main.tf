@@ -21,11 +21,7 @@ module "dns_zones" {
   source     = "./dns-zones"
 
   resource_group_name = module.resource_group.name
-  cluster_vnet        = {
-    id   = module.vnets.aks_vnet_id
-    name = module.vnets.aks_vnet_name
-  }
-  tags = local.tags
+  tags                = local.tags
 }
 
 module "managed_identities" {
