@@ -39,9 +39,8 @@ project {
     params {
         param("teamcity.ui.settings.readOnly", "true")
         param("env.JIRA_PROJECT_ID", "master")
-        param("env.PROJECT_NAME", "subnetissue")
+        param("env.PROJECT_NAME", "aks-issue")
         param("env.ARTIFACTORY_URL", "%system.artifactory.registry.url%")
-        param("env.PIP_EXTRA_INDEX_URL", "%system.pypi-public.server.address.login%")
         param("env.TF_VAR_ARM_CLIENT_ID", "%env.ARM_CLIENT_ID%")
         param("env.TF_VAR_ARM_CLIENT_SECRET", "%env.ARM_CLIENT_SECRET%")
         param("env.TF_VAR_ARM_CLIENT_SECRET_ID", "%env.ARM_CLIENT_SECRET_ID%")
@@ -57,7 +56,7 @@ project {
     template(EnvironmentSetup)
 
     val pathToScripts = "shared/"
-    val dockerImageTag = "4ee081b6b6ee4139f8bb3ba7984ed407528dc170"
+    val dockerImageTag = "2b2587c3ec345c3c9f00f337918accacf65c745d"
     val projectName = "%env.PROJECT_NAME%"
 
     val terraformDockerImage =

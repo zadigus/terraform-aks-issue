@@ -8,16 +8,6 @@ variable "resource_group_name" {
   type        = string
 }
 
-variable "subnet_nsg_id" {
-  description = "(required) Private Network Security Group Id of the Subnet"
-  type        = string
-}
-
-variable "aks_idx" {
-  description = "(required) AKS cluster index"
-  type        = number
-}
-
 variable "aks_network" {
   description = "(required) Vnet / Subnets for AKS clusters"
   type        = object({

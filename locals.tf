@@ -12,9 +12,6 @@ locals {
 
   aks_network = {
     "vnet" : var.aks_vnet
-    # cf. https://developer.hashicorp.com/terraform/language/functions/cidrsubnet
-    # cf. https://ntwobike.medium.com/how-cidrsubnet-works-in-terraform-f6ccd8e1838f
     "workers_subnet" : cidrsubnet(var.aks_vnet, 2, 0)
-    "ingress_subnet" : cidrsubnet(var.aks_vnet, 2, 3)
   }
 }

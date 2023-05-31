@@ -1,8 +1,6 @@
 package settings
 
 import jetbrains.buildServer.configs.kotlin.v2019_2.BuildType
-import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
-import shared.azure.build_steps.publishAzureResourceData
 import shared.common.Agent
 import shared.common.Architecture
 import shared.common.DockerImage
@@ -30,19 +28,9 @@ class TerraformDeployBuild(
 
     steps {
         publishJiraProjectId(scriptPath)
-        script {
-            name = "Publish Teamcity Agent IP"
-            scriptContent = """
-                #! /bin/sh
-                
-                AGENT_IP=$(curl ifconfig.me)
-                echo "##teamcity[setParameter name='env.TF_VAR_teamcity_agent_ip' value='${'$'}AGENT_IP']"
-            """.trimIndent()
-        }
         publishTerraformVariables(scriptPath)
         terraformConfig(scriptPath, dockerImage, deploymentWorkingDirectory)
         terraformDeploy(scriptPath, dockerImage, deploymentWorkingDirectory)
-        publishAzureResourceData(scriptPath, dockerImage)
     }
 
     agent.add_to_requirements(this)

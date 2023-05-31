@@ -30,7 +30,6 @@ class TerraformDestroyBuild(
         publishAzureResourceData(scriptPath, dockerImage)
         terraformConfig(scriptPath, dockerImage, deploymentWorkingDirectory)
         pullTerraformState(scriptPath, dockerImage, deploymentWorkingDirectory)
-        destroyNodeResourceGroup(scriptPath, dockerImage)
         terraformDestroy(scriptPath, dockerImage, deploymentWorkingDirectory)
         deleteTerraformStateFile(scriptPath, dockerImage, deploymentWorkingDirectory)
     }

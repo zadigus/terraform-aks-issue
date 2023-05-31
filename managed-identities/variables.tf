@@ -3,11 +3,6 @@ variable "resource_group_name" {
   type        = string
 }
 
-variable "resource_group_id" {
-  description = "(required) ID of the target Resource Group"
-  type        = string
-}
-
 variable "location" {
   description = "(required) Location of Storage Account deployment"
   type        = string

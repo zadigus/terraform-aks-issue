@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <project>
   <modelVersion>4.0.0</modelVersion>
-  <name>MDL_Terraform_Azurerm_Storage_Account_Issue Config DSL Script</name>
-  <groupId>MDL_Terraform_Azurerm_Storage_Account_Issue</groupId>
-  <artifactId>MDL_Terraform_Azurerm_Storage_Account_Issue_dsl</artifactId>
+  <name>MDL_Terraform_AKS_Issue Config DSL Script</name>
+  <groupId>MDL_Terraform_AKS_Issue</groupId>
+  <artifactId>MDL_Terraform_AKS_Issue_dsl</artifactId>
   <version>1.0-SNAPSHOT</version>
 
   <parent>

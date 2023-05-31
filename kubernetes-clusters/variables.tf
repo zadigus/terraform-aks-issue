@@ -8,24 +8,6 @@ variable "dns_zone_id" {
   type        = string
 }
 
-variable "enable_log_analytics" {
-  description = "(optional) Enable log analytics for Kubernetes cluster"
-  type        = bool
-  default     = false
-}
-
-variable "log_analytics_workspace_name" {
-  description = "(optional) Name prefix of the log analytics workspace"
-  type        = string
-  default     = "aks-loganalyticsws"
-}
-
-variable "log_analytics_workspace_sku" {
-  description = "(optional) SKU type of log analytics workspace"
-  type        = string
-  default     = "PerGB2018"
-}
-
 variable "location" {
   description = "(required) Region to create the Kubernetes Cluster"
   type        = string
@@ -75,78 +57,8 @@ variable "cpu_node_pool_max_count" {
   type        = string
 }
 
-variable "add_gpu_node_pool" {
-  description = "(required) Option to add or not GPU node pool"
-  type        = bool
-  default     = false
-}
-
-variable "gpu_node_pool_name" {
-  description = "(required) Name of the GPU node pool for Kubernetes Cluster"
-  type        = string
-  default     = "gpupool"
-}
-
-# https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-general
-variable "gpu_node_pool_vm_size" {
-  description = "(required) Size of virtual machine for GPU node pool"
-  type        = string
-}
-
-variable "gpu_node_pool_min_count" {
-  description = "(optional) Minimum number of GPU nodes"
-  type        = number
-  default     = 0
-}
-
-variable "gpu_node_pool_max_count" {
-  description = "(optional) Maximum number of GPU nodes"
-  type        = number
-  default     = 3
-}
-
-variable "add_aial_node_pool" {
-  description = "(optional) Option to add AIAL GPU node pool for plus-minus-click"
-  type        = bool
-  default     = false
-}
-
-variable "aial_node_pool_name" {
-  description = "(optional) Name of the AIAL GPU node pool for Kubernetes Cluster"
-  type        = string
-  default     = "aialpool"
-}
-
-# https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-general
-variable "aial_node_pool_vm_size" {
-  description = "(required) Size of virtual machine for AIAL GPU node pool"
-  type        = string
-}
-
-variable "aial_node_pool_min_count" {
-  description = "(optional) Minimum number of AIAL GPU nodes"
-  type        = number
-  default     = 0
-}
-
-variable "aial_node_pool_max_count" {
-  description = "(optional) Maximum number of AIAL GPU nodes"
-  type        = number
-  default     = 3
-}
-
 variable "workers_subnet_id" {
   description = "(required) Node pool subnet id"
-  type        = string
-}
-
-variable "name_prefix" {
-  description = "(required) Resource Name Prefix"
-  type        = string
-}
-
-variable "name_suffix" {
-  description = "(required) Resource Name Suffix"
   type        = string
 }
 

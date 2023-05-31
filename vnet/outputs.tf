@@ -9,11 +9,3 @@ output "aks_vnet_name" {
 output "aks_snet_id" {
   value = azurerm_subnet.aks.id
 }
-
-output "aks_ingress_snet_id" {
-  value = azurerm_subnet.ingress.id
-}
-
-output "aks_ingress_snet_name" {
-  value = azurerm_subnet.ingress.name
-}
