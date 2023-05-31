@@ -13,7 +13,6 @@ variable "aks_network" {
   type        = object({
     vnet       = string
     workers_subnet = string
-    ingress_subnet = string
   })
 }
 
