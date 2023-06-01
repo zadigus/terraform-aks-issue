@@ -9,7 +9,7 @@ resource "azurerm_kubernetes_cluster" "cluster" {
   role_based_access_control_enabled = true
   kubernetes_version                = var.kubernetes_version
   local_account_disabled            = false
-  public_network_access_enabled     = true
+  public_network_access_enabled     = false
   sku_tier                          = var.sku_tier
   azure_policy_enabled              = true
 
